@@ -11,7 +11,10 @@ const createEmployees = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please add name");
   }
-  const employee = await EmployeeModel.create({ name: req.body.name });
+  const employee = await EmployeeModel.create({
+    name: req.body.name,
+    supervisor: req.body.supervisor,
+  });
   res.status(200).json(employee);
 });
 
