@@ -3,7 +3,7 @@ const Counter = require("./counter");
 
 const employeeSchema = mongoose.Schema(
   {
-    employeeId: {
+    id: {
       type: Number,
       unique: true,
     },
@@ -16,16 +16,16 @@ const employeeSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-// Pre-save hook to increment the employeeId
+// Pre-save hook to increment the id
 employeeSchema.pre("save", async function (next) {
   const doc = this;
   if (doc.isNew) {
     const counter = await Counter.findByIdAndUpdate(
-      { _id: "employeeId" },
+      { _id: "id" },
       { $inc: { seq: 1 } },
       { new: true, upsert: true }
     );
-    doc.employeeId = counter.seq;
+    doc.id = counter.seq;
   }
   next();
 });
