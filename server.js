@@ -11,6 +11,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://employee-management-topaz.vercel.app",
+      "https://www.bhhrgroup.com",
+      "https://bhhrgroup.com",
     ],
   })
 );
