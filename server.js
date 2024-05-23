@@ -19,6 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/employee", require("./routes/employeeRoutes"));
+app.use("/api/bhhr", require("./routes/bhhrRoute"));
+
 app.use(require("./middleware/errorMiddleware"));
 
 app.listen(port, () => console.log(`We are on port: ${port}`));
