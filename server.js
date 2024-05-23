@@ -13,6 +13,8 @@ app.use(
       "https://employee-management-topaz.vercel.app",
       "https://www.bhhrgroup.com",
       "https://bhhrgroup.com",
+      "https://www.brighthiringhrconsultancygroup.com",
+      "https://brighthiringhrconsultancygroup.com",
     ],
   })
 );
